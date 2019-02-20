@@ -52,8 +52,7 @@ function createSearchAutocomplete() {
 function addMarker(position, title) {
     console.log('title', title)
     var icon = {
-        url: 'https://www.eecusa.com/wp-content/uploads/2018/05/2000px-Map_marker.svg.png', // url
-        // url: 'img/marker.png', // url
+        url: 'https://www.eecusa.com/wp-content/uploads/2018/05/2000px-Map_marker.svg.png',
         scaledSize: new google.maps.Size(23, 33), // scaled size
     };
     var marker = new google.maps.Marker({
