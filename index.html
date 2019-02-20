@@ -1,15 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
     <title>ES6</title>
 </head>
+
 <body>
-    <h1>ES6</h1>
-    <div id="map" style="width: 100%; height: 400px;"></div>
-    <button class="btn">Click Me</button>
-    
+    <header class="flex space-around align-center">
+        <h1 class="logo">Travel Tip</h1>
+        <section class="search-bar flex">
+            <input list="video-list" class="location-list-input" placeholder="Search" autocomplete=off>
+            <button>Search</button>
+            <datalist id="video-list"></datalist>
+        </section>
+    </header>
+    <main class="flex justify-center align-center">
+        <section class="weather-details-container"></section>
+        <section class="map-container video-container">
+            <div id="map" style="width: 100%; height: 400px;"></div>
+            <button class="btn">Click Me</button>
+        </section>
+    </main>
+
     <script type="module" src="js/main.js"></script>
 </body>
+
 </html>

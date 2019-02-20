@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,700|Roboto:300,400,500,700');
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(36, 36, 36);
+    font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    height: 150px;
+    width: 100%;
+    background-color: rgb(19, 19, 19);
+    color: #fff;
+    flex: 1 1 auto;
+}
+
+header h1.logo {
+    text-transform: uppercase;
+    letter-spacing: 0.8rem;
+    font-size: 3.6rem;
+    font-weight: 700;
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.search-bar {
+    width: 50%;
+}
+
+input.location-list-input {
+    border: 1px solid rgb(66, 66, 66);
+    border-radius: 2px 0 0 2px;
+    padding: 15px 25px;
+    font-size: 1rem;
+    width: 100%;
+    background-color: rgb(36, 36, 36);
+    caret-color: #fff;
+}
+
+main {
+    margin-top: 150px;
+    width: 100%;
+}
+
+main>* {
+    flex: 1 1.5 auto;
+    border: 1px red solid;
+    text-align: center;
+    margin: 5px;
+}
+
+.weather-details-container {
+    flex: 1;
+    border: 2px solid blue;
+    height: 200px;
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+    margin: auto;
+}
+
+.weather-details {
+    border: 2px solid red;
+    min-height: 200px;
+    width: 100%;
+}
+
+.map-container {
+    flex: 1.5;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* HELPERS */
+
+.flex {
+    display: flex;
+}
+
+.direction-column {
+    flex-direction: column;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.justify-start {
+    justify-content: flex-start;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.space-around {
+    justify-content: space-around;
+}
+
+/* BUTTON DESIGN */
+button {
+    outline: none;
+    display: inline-block;
+    border: none;
+    padding: 1rem 2rem;
+    margin: 0;
+    text-decoration: none;
+    background: rgb(66, 66, 66);
+    color: #acacac;
+    font-family: sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out, 
+                transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+button:hover {
+    color: #fff;
+}
