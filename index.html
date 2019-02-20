@@ -12,22 +12,29 @@
     <header class="flex space-around align-center">
         <h1 class="logo">Travel Tip</h1>
         <section class="search-bar flex">
-            <input list="video-list" class="location-list-input" placeholder="Search" autocomplete=off>
-            <button class="go-search-btn">GO</button>
+            <input id="pac-input" type="text" class="location-list-input" placeholder="Search" autocomplete=off>
             <button class="current-location-btn">My Location</button>
-            <datalist id="video-list"></datalist>
         </section>
     </header>
     <main class="flex justify-center align-center">
         <section class="location-details-container">
-            <h1>My selected location</h1>
-            <button>Copy To Clipboard</button>
+            <h1 class="current-location-text">My selected location</h1>
+            <div class="tooltip">
+                <button class="clipboard-btn">
+                    <span class="small-window" id="myTooltip"></span>
+                    Copy To Clipboard
+                </button>
+            </div>
         </section>
-        <section class="weather-details-container"></section>
+        <section class="weather-details-container">
+            <h1 class="current-temp"></h1>
+            <h2 class="weather-description"></h2>
+        </section>
         <section id="map" class="map-container video-container">
         </section>
     </main>
 
+    <script src="lib/axios.js"></script>
     <script type="module" src="js/main.js"></script>
 </body>
 
