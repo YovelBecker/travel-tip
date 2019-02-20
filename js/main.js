@@ -1,36 +1,22 @@
-console.log('Main!');
-
 import locService from './services/loc.service.js'
 import mapService from './services/map.service.js'
+import utilService from './services/util-service.js'
 
 locService.getLocs()
     .then(locs => console.log('locs', locs))
 
 window.onload = () => {
     mapService.initMap()
-        .then(
-            () => {
-                mapService.addMarker({ lat: 32.0749831, lng: 34.9120554 });
-            }
-        ).catch(console.warn);
-
-
-
-    locService.getPosition()
-        .then(pos => {
-            console.log('User position is:', pos.coords);
-        })
-        .catch(err => {
-            console.log('err!!!', err);
-        })
+        .then(setMapToCurrentLocation)
 }
 
-// document.querySelector('.btn1').onclick =  () => {
-//     console.log('Thanks!');
-// }
+document.querySelector('.current-location-btn').addEventListener('click', setMapToCurrentLocation)
 
-
-document.querySelector('.btn').addEventListener('click', (ev)=>{
-    console.log('Aha!', ev.target);
-    mapService.panTo( 35.6895,  139.6917);
-})
+function setMapToCurrentLocation() {
+    locService.getPosition()
+        .then(pos => {
+            let currLocation = { lat: pos.coords.latitude, lng: pos.coords.longitude };
+            mapService.addMarker(currLocation, 'Your current location')
+            mapService.panTo(currLocation.lat, currLocation.lng)
+        })
+}
